@@ -25,10 +25,14 @@ function() {
 				template: "app/templates/common-layout/social-layout.hbs",
 			});
 
-	AboutLayout = Backbone.Marionette.LayoutView.extend({
+
+	var myModel = new Backbone.Model({name: 'bar'});
+
+	AboutLayout = Backbone.Marionette.ItemView.extend({
 				el : '#about',
 				template: "app/templates/page-content/about-layout.hbs",
-			}, { name : "Pete"});
+				model : myModel
+			});
 
 	ResumeLayout = Backbone.Marionette.LayoutView.extend({
 				el : '#resume',
@@ -61,7 +65,7 @@ function() {
 	socialLayout.render();
 
 	aboutLayout = new AboutLayout();
-	aboutLayout.render();
+	aboutLayout.render([{name:'billy'}]);
 
 	resumeLayout = new ResumeLayout();
 	resumeLayout.render();
