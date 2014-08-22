@@ -25,6 +25,13 @@ function() {
 				template: "app/templates/common-layout/social-layout.hbs",
 			});
 
+	/*
+
+	TODO - need to remove all of these unnecessary LayoutViews and replace with Item views.
+			 - 1 layout view for entire APP containing multiple ItemViews
+			 - figure out where to put models then too!
+
+	*/
 
 	var myModel = new Backbone.Model({name: 'bar'});
 
