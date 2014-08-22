@@ -1,6 +1,6 @@
 define([],
 function() {
-	var app = {}, AboutLayout = {}, ResumeLayout = {}, PortfolioLayout = {}, CallToActionLayout = {}, TestimonialsLayout = {}, ContactLayout = {},
+	var app = {}, HeaderLayout = {}, FooterLayout = {}, SocialLayout = {}, AboutLayout = {}, ResumeLayout = {}, PortfolioLayout = {}, CallToActionLayout = {}, ContactLayout = {},
 	JST = window.JST = window.JST || {};
 
 	app = new Backbone.Marionette.Application();
@@ -10,38 +10,55 @@ function() {
 		return JST[template](data);
 	};
 
+	HeaderLayout = Backbone.Marionette.LayoutView.extend({
+				el : 'header',
+				template: "app/templates/page-layout/header-layout.hbs",
+			});
+
+	FooterLayout = Backbone.Marionette.LayoutView.extend({
+				el : 'footer',
+				template: "app/templates/page-layout/footer-layout.hbs",
+			});
+
+	SocialLayout = Backbone.Marionette.LayoutView.extend({
+				el : '.social',
+				template: "app/templates/common-layout/social-layout.hbs",
+			});
+
 	AboutLayout = Backbone.Marionette.LayoutView.extend({
 				el : '#about',
-				template: "app/templates/about-layout.hbs",
-			});
+				template: "app/templates/page-content/about-layout.hbs",
+			}, { name : "Pete"});
 
 	ResumeLayout = Backbone.Marionette.LayoutView.extend({
 				el : '#resume',
-				template: "app/templates/resume-layout.hbs",
+				template: "app/templates/page-content/resume-layout.hbs",
 			});
 
 	PortfolioLayout = Backbone.Marionette.LayoutView.extend({
 				el : '#portfolio',
-				template: "app/templates/portfolio-layout.hbs",
+				template: "app/templates/page-content/portfolio-layout.hbs",
 			});
 
 
 	CallToActionLayout = Backbone.Marionette.LayoutView.extend({
 				el : '#call-to-action',
-				template: "app/templates/call-to-action-layout.hbs",
+				template: "app/templates/page-content/call-to-action-layout.hbs",
 			});
-	/* Testimonials not rendering when loaded from template - needs work */
-	/*
-	TestimonialsLayout = Backbone.Marionette.LayoutView.extend({
-				el : '#testimonial-slides',
-				template: "app/templates/testimonials-layout.hbs",
-			});
-	*/
 
 	ContactLayout = Backbone.Marionette.LayoutView.extend({
 				el : '#contact',
-				template: "app/templates/contact-layout.hbs",
+				template: "app/templates/page-content/contact-layout.hbs",
 			});
+
+	headerLayout = new HeaderLayout();
+	headerLayout.render();
+
+	footerLayout = new FooterLayout();
+	footerLayout.render();
+
+	socialLayout = new SocialLayout();
+	socialLayout.render();
 
 	aboutLayout = new AboutLayout();
 	aboutLayout.render();
@@ -54,9 +71,6 @@ function() {
 
 	calltoactionLayout = new CallToActionLayout();
 	calltoactionLayout.render();
-
-	//testimonialsLayout = new TestimonialsLayout();
-	//testimonialsLayout.render();
 
 	contactLayout = new ContactLayout();
 	contactLayout.render();

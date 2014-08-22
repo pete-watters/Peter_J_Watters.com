@@ -1,4 +1,4 @@
-require.config({ 
+require.config({
 	baseUrl: "app",
     paths: {
 		'router'				: 'router',
@@ -12,7 +12,14 @@ require.config({
 		'backbone.wreqr'		: '../bower_components/backbone.wreqr/lib/backbone.wreqr',
 		'bootstrap'				: '../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap',
 		'handlebars'			: '../bower_components/handlebars/handlebars',
+		'jquery_flexslider'		: '../bower_components/ceevee/js/jquery.flexslider',
+		'ceevee_waypoints'		: '../bower_components/ceevee/js/waypoints',
+		'jquery_fittext'		: '../bower_components/ceevee/js/jquery.fittext',
+		'ceevee_popup'			: '../bower_components/ceevee/js/magnific-popup',
+		'ceevee_init'			: '../bower_components/ceevee/js/init',
 	},
+
+
 	shim : {
 		jquery : {
 			exports : 'jQuery'
@@ -39,7 +46,7 @@ require.config({
 		},
 		templates : {
 			deps : ['handlebars']}
-		},    
+		},
 });
 
 require([
@@ -52,9 +59,12 @@ require([
 	"templates",
 	"handlebars",
 	"bootstrap",
+	"jquery_flexslider",
+	"ceevee_waypoints",
+	"jquery_fittext",
+	"ceevee_popup" ,
+	"ceevee_init"
 ],
-function(jquery, backbone, underscore, marionette, app, router) {
-	app.router = new router();
-
+function(jquery, backbone, underscore, marionette, jquery_flexslider, ceevee_waypoints, jquery_fittext, ceevee_popup , ceevee_init, app, router) {
     Backbone.history.start({ pushState: true });
 });
