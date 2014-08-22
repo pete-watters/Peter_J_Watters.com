@@ -1,6 +1,6 @@
 define([],
 function() {
-	var app = {}, MainLayout = {}, AboutLayout = {}, ResumeLayout = {}, PortfolioLayout = {}, CallToActionLayout = {}, TestimonialsLayout = {}, ContactLayout = {},
+	var app = {}, AboutLayout = {}, ResumeLayout = {}, PortfolioLayout = {}, CallToActionLayout = {}, TestimonialsLayout = {}, ContactLayout = {},
 	JST = window.JST = window.JST || {};
 
 	app = new Backbone.Marionette.Application();
@@ -9,11 +9,6 @@ function() {
 		if (!JST[template]) throw "Template '" + template + "' not found!";
 		return JST[template](data);
 	};
-
-	MainLayout = Backbone.Marionette.LayoutView.extend({
-				el : '#main',
-				template: "app/templates/main-layout.hbs",
-			});
 
 	AboutLayout = Backbone.Marionette.LayoutView.extend({
 				el : '#about',
@@ -47,10 +42,6 @@ function() {
 				el : '#contact',
 				template: "app/templates/contact-layout.hbs",
 			});
-
-
-	mainLayout = new MainLayout();
-	mainLayout.render();
 
 	aboutLayout = new AboutLayout();
 	aboutLayout.render();
