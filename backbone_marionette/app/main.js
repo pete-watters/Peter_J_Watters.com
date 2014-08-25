@@ -16,7 +16,6 @@ require.config({
 		'ceevee_waypoints'		: '../bower_components/ceevee/js/waypoints',
 		'jquery_fittext'		: '../bower_components/ceevee/js/jquery.fittext',
 		'ceevee_popup'			: '../bower_components/ceevee/js/magnific-popup',
-		'ceevee_init'			: '../bower_components/ceevee/js/init',
 	},
 
 
@@ -62,9 +61,8 @@ require([
 	"jquery_flexslider",
 	"ceevee_waypoints",
 	"jquery_fittext",
-	"ceevee_popup" ,
-	"ceevee_init"
+	"ceevee_popup"
 ],
-function(jquery, backbone, underscore, marionette, jquery_flexslider, ceevee_waypoints, jquery_fittext, ceevee_popup , ceevee_init, app, router) {
+function(jquery, backbone, underscore, marionette, jquery_flexslider, ceevee_waypoints, jquery_fittext, ceevee_popup , app, router) {
     Backbone.history.start({ pushState: true });
 });
