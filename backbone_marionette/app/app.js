@@ -1,6 +1,6 @@
 define([],
 function() {
-	var app = {}, HeaderView = {}, FooterView = {},SocialView = {}, AboutView = {}, ResumeView = {},PortfolioView = {}, ContactView = {},JST = window.JST = window.JST || {};
+	var app = {}, HeaderView = {}, FooterView = {}, SocialView = {}, AboutView = {}, EducationView = {}, WorkView = {}, SkillsView = {},PortfolioView = {}, ContactView = {},JST = window.JST = window.JST || {};
 
 	app = new Backbone.Marionette.Application();
 
@@ -31,13 +31,29 @@ function() {
 											resume_link : 'file.pdf'
 										});
 
-	ResumeModel = Backbone.Model.extend({});
-	ResumeCollection = Backbone.Collection.extend({ model: ResumeModel});
+	EducationModel = Backbone.Model.extend({});
+	EducationCollection = Backbone.Collection.extend({ model: EducationModel});
 
-	var resume = new ResumeCollection([
-			new ResumeModel({ name: 'Wet Cat', image_path: 'assets/images/cat2.jpg' }),
-			new ResumeModel({ name: 'Bitey Cat', image_path: 'assets/images/cat1.jpg' }),
-			new ResumeModel({ name: 'Surprised Cat', image_path: 'assets/images/cat3.jpg' })
+	var education = new EducationCollection([
+			new EducationModel( {institution:"Dublin City University", qualification:"M.Eng in Telecommunications Engineering", date:"April 2007", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "}),
+			new EducationModel( {institution:"Dublin City University", qualification:"B.Eng in Digital Media Engineering", date:"April 2007", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "})
+	]);
+
+	WorkModel = Backbone.Model.extend({});
+	WorkCollection = Backbone.Collection.extend({ model: WorkModel});
+
+	var work = new WorkCollection([
+			new WorkModel( {company:"Fidelity", role:"XYZ", date:"April 2007", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "}),
+			new WorkModel( {company:"Yahoo", role:"XYZ", date:"April 2007", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "}),
+			new WorkModel( {company:"eSpatial", role:"XYZ", date:"April 2007", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "}),
+			new WorkModel( {company:"Fidelity", role:"XYZ", date:"April 2007", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "})
+	]);
+
+	SkillsModel = Backbone.Model.extend({});
+	SkillsCollection = Backbone.Collection.extend({ model: SkillsModel});
+
+	var skills = new SkillsCollection([
+			new SkillsModel({ content:"My main passion is as a UX web application developer however I have had quite a broad career so far with my fingers in many pies. My main technical skills are outlined below." })
 	]);
 
 	var PortfolioModel = Backbone.Model.extend({});
@@ -72,11 +88,20 @@ function() {
 				template: "app/templates/page-content/about-view.hbs",
 				model : AboutModel
 			});
-	ResumeView = Backbone.Marionette.ItemView.extend({
-				el : '#resume',
-				template: "app/templates/page-content/resume-view.hbs",
-				tagName: 'li',
-				model: resume
+	EducationView = Backbone.Marionette.ItemView.extend({
+				el : '.education',
+				template: "app/templates/page-content/education-view.hbs",
+				model: education
+			});
+	WorkView = Backbone.Marionette.ItemView.extend({
+				el : '.work',
+				template: "app/templates/page-content/work-view.hbs",
+				model: work
+			});
+	SkillsView = Backbone.Marionette.ItemView.extend({
+				el : '.skill',
+				template: "app/templates/page-content/skills-view.hbs",
+				model: skills
 			});
 	PortfolioView = Backbone.Marionette.ItemView.extend({
 				el : '#portfolio',
@@ -102,8 +127,14 @@ function() {
 	aboutView = new AboutView();
 	aboutView.render();
 
-	resumeView = new ResumeView();
-	resumeView.render();
+	educationView = new EducationView();
+	educationView.render();
+
+	workView = new WorkView();
+	workView.render();
+
+	skillsView = new SkillsView();
+	skillsView.render();
 
 	portfolioView = new PortfolioView();
 	portfolioView.render();

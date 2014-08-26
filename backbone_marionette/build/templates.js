@@ -53,6 +53,41 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   return "\n         <div class=\"row section-head\">\n\n            <div class=\"two columns header-col\">\n\n               <h1><span>Get In Touch.</span></h1>\n\n            </div>\n\n            <div class=\"ten columns\">\n\n                  <p class=\"lead\">If you would like to get in touch feel free to contact me using the form below.\n                  </p>\n\n            </div>\n\n         </div>\n\n         <div class=\"row\">\n\n            <div class=\"eight columns\">\n\n               <!-- form -->\n               <form action=\"\" method=\"post\" id=\"contactForm\" name=\"contactForm\">\n                    <fieldset>\n\n                  <div>\n                           <label for=\"contactName\">Name <span class=\"required\">*</span></label>\n                           <input type=\"text\" value=\"\" size=\"35\" id=\"contactName\" name=\"contactName\">\n                  </div>\n\n                  <div>\n                           <label for=\"contactEmail\">Email <span class=\"required\">*</span></label>\n                           <input type=\"text\" value=\"\" size=\"35\" id=\"contactEmail\" name=\"contactEmail\">\n                  </div>\n\n                  <div>\n                           <label for=\"contactSubject\">Subject</label>\n                           <input type=\"text\" value=\"\" size=\"35\" id=\"contactSubject\" name=\"contactSubject\">\n                  </div>\n\n                  <div>\n                     <label for=\"contactMessage\">Message <span class=\"required\">*</span></label>\n                     <textarea cols=\"50\" rows=\"15\" id=\"contactMessage\" name=\"contactMessage\"></textarea>\n                  </div>\n\n                  <div>\n                     <button class=\"submit\">Submit</button>\n                     <span id=\"image-loader\">\n                        <img alt=\"\" src=\"bower_components/ceevee/images/loader.gif\">\n                     </span>\n                  </div>\n\n                    </fieldset>\n                   </form> <!-- Form End -->\n\n               <!-- contact-warning -->\n               <div id=\"message-warning\"> Error boy</div>\n               <!-- contact-success -->\n                   <div id=\"message-success\">\n                  <i class=\"fa fa-check\"></i>Your message was sent, thank you!<br>\n                   </div>\n\n            </div>\n\n\n            <aside class=\"four columns footer-widgets\">\n               <div class=\"widget widget_tweets\">\n\n                  <h4 class=\"widget-title\">Latest Tweets</h4>\n\n                  <ul id=\"twitter\">\n                     <li>\n                        <span>\n                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.\n                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum\n                        <a href=\"#\">http://t.co/CGIrdxIlI3</a>\n                        </span>\n                        <b><a href=\"#\">2 Days Ago</a></b>\n                     </li>\n                     <li>\n                        <span>\n                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,\n                        eaque ipsa quae ab illo inventore veritatis et quasi\n                        <a href=\"#\">http://t.co/CGIrdxIlI3</a>\n                        </span>\n                        <b><a href=\"#\">3 Days Ago</a></b>\n                     </li>\n                  </ul>\n\n                 </div>\n\n            </aside>\n\n      </div>";
   });
 
+this["JST"]["app/templates/page-content/education-view.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n\n            <div class=\"row item\">\n               <div class=\"twelve columns\">\n                  <h3>";
+  if (stack1 = helpers.institution) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.institution); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h3>\n                  <p class=\"info\">";
+  if (stack1 = helpers.qualification) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.qualification); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " <span>&bull;</span> <em class=\"date\">";
+  if (stack1 = helpers.date) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.date); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</em></p>\n                  <p> ";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.description); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " </p>\n               </div>\n            </div> <!-- item end -->\n\n         ";
+  return buffer;
+  }
+
+  buffer += "      <!-- Education      ----------------------------------------------- -->\n         <div class=\"three columns header-col\">\n            <h1><span>Education</span></h1>\n         </div>\n         <div class=\"nine columns main-col\">\n\n         ";
+  stack1 = helpers.each.call(depth0, depth0, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n\n         </div> <!-- main-col end -->";
+  return buffer;
+  });
+
 this["JST"]["app/templates/page-content/portfolio-view.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -130,13 +165,53 @@ function program3(depth0,data) {
   return buffer;
   });
 
-this["JST"]["app/templates/page-content/resume-view.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["JST"]["app/templates/page-content/skills-view.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "<!-- Skills  ----------------------------------------------- -->\n<div class=\"three columns header-col\">\n   <h1><span>Skills</span></h1>\n</div>\n\n<div class=\"nine columns main-col\">\n   <p>";
+  if (stack1 = helpers.content) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.content); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n</div> <!-- main-col end -->\n";
+  return buffer;
+  });
+
+this["JST"]["app/templates/page-content/work-view.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
   
+  var buffer = "", stack1;
+  buffer += "\n            <div class=\"row item\">\n               <div class=\"twelve columns\">\n                  <h3>";
+  if (stack1 = helpers.company) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.company); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h3>\n                  <p class=\"info\">";
+  if (stack1 = helpers.role) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.role); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " <span>&bull;</span> <em class=\"date\">";
+  if (stack1 = helpers.date) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.date); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</em></p>\n                  <p> ";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.description); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " </p>\n               </div>\n            </div> <!-- item end -->\n\n         ";
+  return buffer;
+  }
 
-
-  return "      <!-- Education      ----------------------------------------------- -->\n      <div class=\"row education\">\n\n         <div class=\"three columns header-col\">\n            <h1><span>Education</span></h1>\n         </div>\n         <div class=\"nine columns main-col\">\n            <div class=\"row item\">\n               <div class=\"twelve columns\">\n                  <h3>Dublin City University</h3>\n                  <p class=\"info\">M.Eng in Telecommunications Engineering <span>&bull;</span> <em class=\"date\">April 2007</em></p>\n                  <p>\n                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\n                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,\n                  ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.\n                  Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.\n                  </p>\n               </div>\n            </div> <!-- item end -->\n\n            <div class=\"row item\">\n               <div class=\"twelve columns\">\n                  <h3>Dublin City University</h3>\n                  <p class=\"info\">B.Eng in Digital Media Engineering <span>&bull;</span> <em class=\"date\">March 2003</em></p>\n                  <p>\n                  This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.\n                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem\n                  nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan\n                  ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat\n                  </p>\n               </div>\n\n            </div> <!-- item end -->\n\n         </div> <!-- main-col end -->\n\n      </div> <!-- End Education -->\n\n\n      <!-- Work\n      ----------------------------------------------- -->\n      <div class=\"row work\">\n\n         <div class=\"three columns header-col\">\n            <h1><span>Work</span></h1>\n         </div>\n\n         <div class=\"nine columns main-col\">\n\n            <div class=\"row item\">\n\n               <div class=\"twelve columns\">\n\n                  <h3>Fidelity Investments</h3>\n                  <p class=\"info\">Senior UX Developer <span>&bull;</span> <em class=\"date\">March 2010 - Present</em></p>\n\n                  <p>\n                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\n                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,\n                  ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.\n                  Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.\n                  </p>\n\n               </div>\n\n            </div> <!-- item end -->\n\n            <div class=\"row item\">\n\n               <div class=\"twelve columns\">\n\n                  <h3>Yahoo!</h3>\n                  <p class=\"info\">Technical Operations Specialist <span>&bull;</span> <em class=\"date\">March 2007 - February 2010</em></p>\n\n                  <p>\n                  This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.\n                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem\n                  nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan\n                  ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat\n                  </p>\n\n               </div>\n\n            </div> <!-- item end -->\n\n         </div> <!-- main-col end -->\n\n      </div> <!-- End Work -->\n\n\n      <!-- Skills\n      ----------------------------------------------- -->\n      <div class=\"row skill\">\n\n         <div class=\"three columns header-col\">\n            <h1><span>Skills</span></h1>\n         </div>\n\n         <div class=\"nine columns main-col\">\n\n            <p>My main passion is as a UX web application developer however I have had quite a broad career so far with my fingers in many pies. My main technical skills are outlined below.\n            </p>\n            </div> <!-- main-col end -->\n\n      </div> <!-- End skills -->";
+  buffer += "<!-- Work ----------------------------------------------- -->\n         <div class=\"three columns header-col\">\n            <h1><span>Work</span></h1>\n         </div>\n\n         <div class=\"nine columns main-col\">\n         ";
+  stack1 = helpers.each.call(depth0, depth0, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n         </div> <!-- main-col end -->\n";
+  return buffer;
   });
 
 this["JST"]["app/templates/page-layout/footer-view.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
