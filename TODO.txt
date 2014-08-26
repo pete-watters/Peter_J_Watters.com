@@ -1,0 +1,19 @@
+TODO
+
+- add form validation to contact
+- do something with latest tweets
+    - does it stay tweets / become news from Tumblr? -> Should be latest posts and then read more on my blog page
+    - need a model for it anyway
+
+- do I want to have a download resume? if so it should not have my phone number
+    - best to remove it / get it to say please contact me and jump to the form
+    - could be best to just totally remove it then
+
+- should I bother using couch?
+- figure out where to put models
+
+===============================
+
+ - power most of the profile information using the linkedIn API(obviously take a backup though as a fallback - once it works once store it as a model and use that if cannot connect)
+    - once source of truth for my info
+    - another sample of pulling data from a restful API

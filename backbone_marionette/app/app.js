@@ -71,47 +71,47 @@ function() {
 
 	HeaderView = Backbone.Marionette.ItemView.extend({
 				el : 'header',
-				template: "app/templates/page-layout/header-view.hbs",
+				template: "app/templates/page-layout/header.hbs",
 			});
 
 	FooterView = Backbone.Marionette.ItemView.extend({
 				el : 'footer',
-				template: "app/templates/page-layout/footer-view.hbs",
+				template: "app/templates/page-layout/footer.hbs",
 			});
 	SocialView = Backbone.Marionette.ItemView.extend({
 				el : '.social',
-				template: "app/templates/common-layout/social-view.hbs",
+				template: "app/templates/common-layout/social.hbs",
 				model: socialCollection
 			});
 	AboutView = Backbone.Marionette.ItemView.extend({
 				el : '#about',
-				template: "app/templates/page-content/about-view.hbs",
+				template: "app/templates/page-content/about.hbs",
 				model : AboutModel
 			});
 	EducationView = Backbone.Marionette.ItemView.extend({
 				el : '.education',
-				template: "app/templates/page-content/education-view.hbs",
+				template: "app/templates/page-content/education.hbs",
 				model: education
 			});
 	WorkView = Backbone.Marionette.ItemView.extend({
 				el : '.work',
-				template: "app/templates/page-content/work-view.hbs",
+				template: "app/templates/page-content/work.hbs",
 				model: work
 			});
 	SkillsView = Backbone.Marionette.ItemView.extend({
 				el : '.skill',
-				template: "app/templates/page-content/skills-view.hbs",
+				template: "app/templates/page-content/skills.hbs",
 				model: skills
 			});
 	PortfolioView = Backbone.Marionette.ItemView.extend({
 				el : '#portfolio',
-				template: "app/templates/page-content/portfolio-view.hbs",
+				template: "app/templates/page-content/portfolio.hbs",
 				model: portfolioCollection
 			});
 
 	ContactView = Backbone.Marionette.ItemView.extend({
 				el : '#contact',
-				template: "app/templates/page-content/contact-view.hbs",
+				template: "app/templates/page-content/contact.hbs",
 			});
 
 	/*	View render */
