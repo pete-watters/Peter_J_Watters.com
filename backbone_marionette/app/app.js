@@ -1,6 +1,6 @@
 define([],
 function() {
-	var app = {}, HeaderLayout = {}, FooterLayout = {},SocialLayout = {}, AboutLayout = {}, ResumeLayout = {},PortfolioLayout = {}, ContactLayout = {},JST = window.JST = window.JST || {};
+	var app = {}, HeaderView = {}, FooterView = {},SocialView = {}, AboutView = {}, ResumeView = {},PortfolioView = {}, ContactView = {},JST = window.JST = window.JST || {};
 
 	app = new Backbone.Marionette.Application();
 
@@ -9,16 +9,8 @@ function() {
 		return JST[template](data);
 	};
 
-	HeaderLayout = Backbone.Marionette.ItemView.extend({
-				el : 'header',
-				template: "app/templates/page-layout/header-layout.hbs",
-			});
 
-	FooterLayout = Backbone.Marionette.ItemView.extend({
-				el : 'footer',
-				template: "app/templates/page-layout/footer-layout.hbs",
-			});
-
+	/*	Models and collections*/
 	var SocialModel = Backbone.Model.extend();
 	var SocialCollection = Backbone.Collection.extend({ model: SocialModel });
 
@@ -32,13 +24,6 @@ function() {
 					new SocialModel({ site: 'Stack Overflow' , icon: 'fa-stack-overflow' , link: 'http://stackoverflow.com/users/1365580/peadar'})
 					]);
 
-	SocialLayout = Backbone.Marionette.ItemView.extend({
-				el : '.social',
-				template: "app/templates/common-layout/social-layout.hbs",
-				model: socialCollection
-			});
-
-
 	var AboutModel = new Backbone.Model({
 											name: 'Peter Watters',
 											description: '<p>I am fully qualified and chartered engineer who is working as a Web Application developer and UX specialist. I have keen interest in developing rich internet applciations using HTML, CSS and Javascript. My goal is to produce applications that look awesome but also have an intuitive user experience and are fully accessible to all users.</p><p> Outside of my day job my main interests include football, fitness, motorcycles and music. Football is my main passion in which I operate primarily as a winger / wing back. I really enjoy keeping fit and am currently trying to master calisthenics. I also love music and play electric guitar.</p>',
@@ -46,32 +31,14 @@ function() {
 											resume_link : 'file.pdf'
 										});
 
-	AboutLayout = Backbone.Marionette.ItemView.extend({
-				el : '#about',
-				template: "app/templates/page-content/about-layout.hbs",
-				model : AboutModel
-			});
-
-
-ResumeModel = Backbone.Model.extend({});
-ResumeCollection = Backbone.Collection.extend({ model: ResumeModel});
-
+	ResumeModel = Backbone.Model.extend({});
+	ResumeCollection = Backbone.Collection.extend({ model: ResumeModel});
 
 	var resume = new ResumeCollection([
 			new ResumeModel({ name: 'Wet Cat', image_path: 'assets/images/cat2.jpg' }),
 			new ResumeModel({ name: 'Bitey Cat', image_path: 'assets/images/cat1.jpg' }),
 			new ResumeModel({ name: 'Surprised Cat', image_path: 'assets/images/cat3.jpg' })
 	]);
-
-
-	ResumeLayout = Backbone.Marionette.ItemView.extend({
-				el : '#resume',
-				template: "app/templates/page-content/resume-layout.hbs",
-				tagName: 'li',
-				model: resume
-			});
-
-
 
 	var PortfolioModel = Backbone.Model.extend({});
 	var PortfolioCollection = Backbone.Collection.extend({ model: PortfolioModel });
@@ -83,37 +50,66 @@ ResumeCollection = Backbone.Collection.extend({ model: ResumeModel});
 			new PortfolioModel({ title : 'Coffee' , description_short : 'Illustration', image : 'bower_components/ceevee/images/portfolio/coffee.jpg', modal_id : 'modal-04' , modal_href_title :'Coffee Title' , description_long : 'Ooooh eee OOh ah ah', tags : 'Branding, Webdesign', demo_link : 'http://www.google.com'})
 		]);
 
-	PortfolioLayout = Backbone.Marionette.ItemView.extend({
+
+	/*	View init */
+
+	HeaderView = Backbone.Marionette.ItemView.extend({
+				el : 'header',
+				template: "app/templates/page-layout/header-view.hbs",
+			});
+
+	FooterView = Backbone.Marionette.ItemView.extend({
+				el : 'footer',
+				template: "app/templates/page-layout/footer-view.hbs",
+			});
+	SocialView = Backbone.Marionette.ItemView.extend({
+				el : '.social',
+				template: "app/templates/common-layout/social-view.hbs",
+				model: socialCollection
+			});
+	AboutView = Backbone.Marionette.ItemView.extend({
+				el : '#about',
+				template: "app/templates/page-content/about-view.hbs",
+				model : AboutModel
+			});
+	ResumeView = Backbone.Marionette.ItemView.extend({
+				el : '#resume',
+				template: "app/templates/page-content/resume-view.hbs",
+				tagName: 'li',
+				model: resume
+			});
+	PortfolioView = Backbone.Marionette.ItemView.extend({
 				el : '#portfolio',
-				template: "app/templates/page-content/portfolio-layout.hbs",
+				template: "app/templates/page-content/portfolio-view.hbs",
 				model: portfolioCollection
 			});
 
-	ContactLayout = Backbone.Marionette.ItemView.extend({
+	ContactView = Backbone.Marionette.ItemView.extend({
 				el : '#contact',
-				template: "app/templates/page-content/contact-layout.hbs",
+				template: "app/templates/page-content/contact-view.hbs",
 			});
 
-	headerLayout = new HeaderLayout();
-	headerLayout.render();
+	/*	View render */
+	headerView = new HeaderView();
+	headerView.render();
 
-	footerLayout = new FooterLayout();
-	footerLayout.render();
+	footerView = new FooterView();
+	footerView.render();
 
-	socialLayout = new SocialLayout();
-	socialLayout.render();
+	socialView = new SocialView();
+	socialView.render();
 
-	aboutLayout = new AboutLayout();
-	aboutLayout.render();
+	aboutView = new AboutView();
+	aboutView.render();
 
-	resumeLayout = new ResumeLayout();
-	resumeLayout.render();
+	resumeView = new ResumeView();
+	resumeView.render();
 
-	portfolioLayout = new PortfolioLayout();
-	portfolioLayout.render();
+	portfolioView = new PortfolioView();
+	portfolioView.render();
 
-	contactLayout = new ContactLayout();
-	contactLayout.render();
+	contactView = new ContactView();
+	contactView.render();
 
 	/* Document ready stuff taken from init */
 
