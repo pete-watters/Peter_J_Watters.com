@@ -35,25 +35,30 @@ function() {
 	EducationCollection = Backbone.Collection.extend({ model: EducationModel});
 
 	var education = new EducationCollection([
-			new EducationModel( {institution:"Dublin City University", qualification:"M.Eng in Telecommunications Engineering", date:"April 2007", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "}),
-			new EducationModel( {institution:"Dublin City University", qualification:"B.Eng in Digital Media Engineering", date:"April 2007", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "})
+			new EducationModel( {institution:"Dublin City University", qualification:"M.Eng in Telecommunications Engineering", date:"2007 - 2010", description:"Masters degree, Telecommunications Engineering majoring in Network Communication, 2.1 "}),
+			new EducationModel( {institution:"Dublin City University", qualification:"B.Eng in Digital Media Engineering", date:"April 2007", description:"The course covered a wide range of computer science topics including software programming, information retrieval, web design & development, telecommunications, signal processing, computer graphics, system administration and network security."})
 	]);
 
-	WorkModel = Backbone.Model.extend({});
-	WorkCollection = Backbone.Collection.extend({ model: WorkModel});
+	var WorkModel = Backbone.Model.extend({});
+	var WorkCollection = Backbone.Collection.extend({ model: WorkModel});
 
 	var work = new WorkCollection([
-			new WorkModel( {company:"Fidelity", role:"XYZ", date:"April 2007", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "}),
-			new WorkModel( {company:"Yahoo", role:"XYZ", date:"April 2007", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "}),
-			new WorkModel( {company:"eSpatial", role:"XYZ", date:"April 2007", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "}),
-			new WorkModel( {company:"Fidelity", role:"XYZ", date:"April 2007", description:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "})
+			new WorkModel( {company:"Fidelity", role:"UX Developer", date:"June 2014 - Present", description:"I am currently working as a contract UX developer at Fidelity Investments. I have gotten the chance to work on several projects during my time here and have been working using the latest front end technologies. "}),
+			new WorkModel( {company:"Yahoo", role:"Ad Technology Producer", date:"April 2013 - June 2014", description:"I provided support, administration, technical projects and consultancy for all advertising tools and platforms used. I was the agile scrum master of Tech Ops R&D projects and in charge of maintenance/ development of  internal tools. I gained invaluable experience working on high traffic websites during my time there and up-skilled my own personal knowledge in the field of online advertising and project management. I also worked as a development consultant in my team working to write UNIX scripts and Java code to maintain applications here."}),
+			new WorkModel( {company:"eSpatial", role:"UI-Developer / UX Designer", date:"March 2012 – April 2013 (1 year 2 months)", description:"I worked as a UI /UX developer for eSpatial and was part of the UI development team responsible for designing and developing the UI for the flagship GIS product.  The main technologies I was using were Javascript, HTML5, CSS3 and several Javascript libraries such as jQuery and OpenLayers. I gained valuable UX experience producing wireframes and mock-ups using Balsamiq and then seeing them through to front end code. I have a strong interest in usability and accessibility of applications and I helped to make several improvements to the usability of the product. "}),
+			new WorkModel( {company:"The Now Factory", role:"Operations Engineer / Software Developer", date:"February 2010 - March 2012", description:"My time at The NOW Factory (TNF) was split between development work on internal and external projects and also with operations and support tasks. "}),
+			new WorkModel( {company:"Ocuco", role:"Technical Support Engineer/ Web developer", date:"May 2008 – February 2010", description:"During my time at Ocuco I became the Lead Pharmaceutical software(Integra) technical support engineer. After a year there I also took on the role of Webmaster for the company and was in charge of developing and maintaining their suite of websites. "}),
+			new WorkModel( {company:"Jeebers", role:"Web developer", date:"January 2008 – March 2008", description:"This was my first full-time development role and I gained valuable commercial web development experience as I was working on high profile websites including sites for Carphone Warehouse, Clearys and DID electrical. "}),
+			new WorkModel( {company:"IBM", role:"Test technician (Z-series)", date:"July 2007 - January 2008", description:"I worked as a server test technician in IBM in Damastown for a 6-month contract. I had also previously worked there as a General Operative on several short-term contracts over the summer before I graduated from university. "}),
+			new WorkModel( {company:"HP", role:"Product Testing Engineer", date:"May 2008 – February 2010", description:"I successfully completed an internship in Hewlett Packard as part of my degree programme where I worked as a project testing engineer."})
 	]);
 
 	SkillsModel = Backbone.Model.extend({});
 	SkillsCollection = Backbone.Collection.extend({ model: SkillsModel});
 
+
 	var skills = new SkillsCollection([
-			new SkillsModel({ content:"My main passion is as a UX web application developer however I have had quite a broad career so far with my fingers in many pies. My main technical skills are outlined below." })
+			new SkillsModel({ content:"My main passion is as a UX web application developer however I have had quite a broad career. My main technical skills are outlined below." })
 	]);
 
 	var PortfolioModel = Backbone.Model.extend({});
