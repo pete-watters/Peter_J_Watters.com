@@ -1,0 +1,19 @@
+      <!-- Education      ----------------------------------------------- -->
+         <div class="three columns header-col">
+            <h1><span>Education</span></h1>
+         </div>
+         <div class="nine columns main-col">
+
+         {{#each this}}
+
+            <div class="row item">
+               <div class="twelve columns">
+                  <h3>{{institution}}</h3>
+                  <p class="info">{{qualification}} <span>&bull;</span> <em class="date">{{date}}</em></p>
+                  <p> {{description}} </p>
+               </div>
+            </div> <!-- item end -->
+
+         {{/each}}
+
+         </div> <!-- main-col end -->
