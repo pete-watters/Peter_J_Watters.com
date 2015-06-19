@@ -65,7 +65,7 @@ function() {
 	var PortfolioCollection = Backbone.Collection.extend({ model: PortfolioModel });
 
 	var portfolioCollection = new PortfolioCollection([
-			new PortfolioModel({ title : 'Coffee' , description_short : 'Illustration', image : 'bower_components/ceevee/images/portfolio/coffee.jpg', modal_id : 'modal-01' , modal_href_title :'Coffee Title' , description_long : 'Ooooh eee OOh ah ah', tags : 'Branding, Webdesign' , demo_link : 'http://www.google.com'}),
+			new PortfolioModel({ title : 'Coffee' , description_short : 'Illustration', image : 'app/img/portfolio/bitchplease.png', modal_id : 'modal-01' , modal_href_title :'Coffesssse Title' , description_long : 'Ooooh eee OOh ah ah', tags : 'Branding, Webdesign' , demo_link : 'http://www.google.com'}),
 			new PortfolioModel({ title : 'Coffee' , description_short : 'Illustration', image : 'bower_components/ceevee/images/portfolio/coffee.jpg', modal_id : 'modal-02' , modal_href_title :'Coffee Title' , description_long : 'Ooooh eee OOh ah ah', tags : 'Branding, Webdesign', demo_link : 'http://www.google.com'}),
 			new PortfolioModel({ title : 'Coffee' , description_short : 'Illustration', image : 'bower_components/ceevee/images/portfolio/coffee.jpg', modal_id : 'modal-03' , modal_href_title :'Coffee Title' , description_long : 'Ooooh eee OOh ah ah', tags : 'Branding, Webdesign', demo_link : 'http://www.google.com'}),
 			new PortfolioModel({ title : 'Coffee' , description_short : 'Illustration', image : 'bower_components/ceevee/images/portfolio/coffee.jpg', modal_id : 'modal-04' , modal_href_title :'Coffee Title' , description_long : 'Ooooh eee OOh ah ah', tags : 'Branding, Webdesign', demo_link : 'http://www.google.com'})
