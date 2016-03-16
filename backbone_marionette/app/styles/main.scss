@@ -1,7 +1,12 @@
-$icon-font-path: "bower_components/bootstrap-sass-official/assets/fonts/";
-@import 'bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
-
+$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/";
+@import '../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
 
 $fa-font-path: '../../bower_components/fontawesome/fonts';
-@import 'bower_components/fontawesome/scss/font-awesome.scss';
+@import '../../bower_components/fontawesome/scss/font-awesome.scss';
 
+// @import '../../bower_components/ceevee/css/default.css';
+// @import '../../bower_components/ceevee/css/layout.css';
+// @import '../../bower_components/ceevee/css/media-queries.css';
+// @import '../../bower_components/ceevee/css/magnific-popup.css';
+
+@import '_custom.scss';

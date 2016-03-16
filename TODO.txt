@@ -1,38 +1,15 @@
 TODO
-
-- add form validation to contact
-- do something with latest tweets
-    - does it stay tweets / become news from Tumblr? -> Should be latest posts and then read more on my blog page
-    - need a model for it anyway
-
-- do I want to have a download resume? if so it should not have my phone number
-    - best to remove it / get it to say please contact me and jump to the form
-    - could be best to just totally remove it then
-
-- should I bother using couch?
-- figure out where to put models
-
-===============================
-
- - power most of the profile information using the linkedIn API(obviously take a backup though as a fallback - once it works once store it as a model and use that if cannot connect)
-    - once source of truth for my info
-    - another sample of pulling data from a restful API
-
-
 ======================================
-
 
 - for the blog part could use either marionette-blog as a template or else the angular portfolio site i had been doing
 
 Priority list should be:
 1) Update LinkedIn to be more concise
+
 2) Make portfolio live with static content
+
 3) Connect LinkedIn profile to portfolio page
+
 4) Populate portfolio sample arrays to show work done - first with sites I'd already done
+
 5) Connect Tumblr to my own blog front end in either Ember like D's or else Angular using Lynda.com angular template
-6)
-
-=====
-LinkedIn JS API - https://developer.linkedin.com/documents/javascript-api-tutorial
-
-
