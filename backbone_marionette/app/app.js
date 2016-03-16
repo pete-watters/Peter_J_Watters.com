@@ -27,7 +27,7 @@ function() {
 	var AboutModel = new Backbone.Model({
 											name: 'Peter Watters',
 											description: '<p>I am fully qualified and chartered engineer who is working as a Web Application developer and UX specialist. I have keen interest in developing rich internet applciations using HTML, CSS and Javascript. My goal is to produce applications that look awesome but also have an intuitive user experience and are fully accessible to all users.</p><p> Outside of my day job my main interests include football, fitness, motorcycles and music. Football is my main passion in which I operate primarily as a winger / wing back. I really enjoy keeping fit and am currently trying to master calisthenics. I also love music and play electric guitar.</p>',
-											contact : 'My preferred method of contact is email and you can reach me at: <br><span>peter@peterjwatters.com</span>',
+											contact : 'My preferred method of contact is email and you can reach me at: <a href="mailto:peter@peterjwatters.com" target="_top">peter@peterjwatters.com</a>',
 											resume_link : 'file.pdf'
 										});
 
@@ -43,7 +43,7 @@ function() {
 	var WorkCollection = Backbone.Collection.extend({ model: WorkModel});
 
 	var work = new WorkCollection([
-			new WorkModel( {company:"Fidelity", role:"UX Developer", date:"June 2014 - Present", description:"I am currently working as a contract UX developer at Fidelity Investments. I have gotten the chance to work on several projects during my time here and have been working using the latest front end technologies. "}),
+			new WorkModel( {company:"Fidelity Investments", role:"UX Developer", date:"June 2014 - Present", description:"I am currently working as a contract UX developer at Fidelity Investments. I have gotten the chance to work on several projects during my time here and have been working using the latest front end technologies. "}),
 			new WorkModel( {company:"Yahoo", role:"Ad Technology Producer", date:"April 2013 - June 2014", description:"I provided support, administration, technical projects and consultancy for all advertising tools and platforms used. I was the agile scrum master of Tech Ops R&D projects and in charge of maintenance/ development of  internal tools. I gained invaluable experience working on high traffic websites during my time there and up-skilled my own personal knowledge in the field of online advertising and project management. I also worked as a development consultant in my team working to write UNIX scripts and Java code to maintain applications here."}),
 			new WorkModel( {company:"eSpatial", role:"UI-Developer / UX Designer", date:"March 2012 – April 2013 (1 year 2 months)", description:"I worked as a UI /UX developer for eSpatial and was part of the UI development team responsible for designing and developing the UI for the flagship GIS product.  The main technologies I was using were Javascript, HTML5, CSS3 and several Javascript libraries such as jQuery and OpenLayers. I gained valuable UX experience producing wireframes and mock-ups using Balsamiq and then seeing them through to front end code. I have a strong interest in usability and accessibility of applications and I helped to make several improvements to the usability of the product. "}),
 			new WorkModel( {company:"The Now Factory", role:"Operations Engineer / Software Developer", date:"February 2010 - March 2012", description:"My time at The NOW Factory (TNF) was split between development work on internal and external projects and also with operations and support tasks. "}),
@@ -65,6 +65,7 @@ function() {
 	var PortfolioCollection = Backbone.Collection.extend({ model: PortfolioModel });
 
 	var portfolioCollection = new PortfolioCollection([
+
 			new PortfolioModel({ title : 'Bitch Please' , description_short : 'bitchplease.ie', image : 'app/img/portfolio/bitchplease.png', modal_id : 'modal-01' , modal_href_title :'Bitch Please' , description_long : 'I designed and created this page for Bitch Please promotions who run club nights. The technologies I used were Ember.js, SASS and Handlebars.', tags : 'Branding, Webdesign' , demo_link : 'http://www.bitchplease.ie'}),
 			new PortfolioModel({ title : 'Booterstown United' , description_short : 'booterstownunited.ie', image : 'app/img/portfolio/booterstownunited.png', modal_id : 'modal-02' , modal_href_title :'Booterstown United' , description_long : 'I created this website for a football team I used to play for. It is based on a wordpress template and provides information on their team and acts as a point of contact for the club.', tags : 'Branding, Webdesign', demo_link : 'http://www.booterstownunited.ie'}),
 			new PortfolioModel({ title : 'Casino Freebies' , description_short : 'casinofreebies.com', image : 'app/img/portfolio/casinofreebies.png', modal_id : 'modal-03' , modal_href_title :'Casino Freebies' , description_long : 'CasinoFreebies is a page I created as part of my affiliate marketing work. It gathers the best online casino deals in one place to make it easy for people to find the best offers. ', tags : 'Branding, Webdesign', demo_link : 'http://www.casinofreebies.com'}),

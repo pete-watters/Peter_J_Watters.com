@@ -14,7 +14,7 @@ module.exports = function(grunt) {
             css: {
                 files: 'app/styles/**/*.scss',
                 tasks: ['sass']
-            },                                          
+            },
 			livereload: {
                 files: [
                     '*.html',
@@ -22,17 +22,17 @@ module.exports = function(grunt) {
                     'app/scripts/{,*/}*.js',
                 ]
             }
-        },		
+        },
         clean: {
             dist: ['build'],
-        },   
+        },
         jshint: {
             all: [
                 'Gruntfile.js',
                 'app/**/*.js',
                 'app/modules/**/*.js',
             ]
-        },                 
+        },
 		requirejs: {
             compile: {
                 options: {
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
                     name: "../bower_components/almond/almond",
                     out: "build/prod.js"
                 }
-            } 
+            }
         },
         sass: {
             dist: {
@@ -74,11 +74,11 @@ module.exports = function(grunt) {
                         'bower_components/marionette/lib/core/backbone.marionette.js',
                         'bower_components/backbone.babysitter/lib/backbone.babysitter.js',
                         'bower_components/backbone.wreqr/lib/backbone.wreqr.js',
-                        'bower_components/bootstrap/dist/js/bootstrap.js',      
+                        'bower_components/bootstrap/dist/js/bootstrap.js',
                     ]
                 }
             }
-        }, 
+        },
         cssmin: {
             dist: {
                 files: {
@@ -88,14 +88,14 @@ module.exports = function(grunt) {
                     ]
                 }
             }
-        },  
-        fileblocks: {  
+        },
+        fileblocks: {
             options: {
                 templates: {
                     'js': '<script data-main="app/main" src="${file}"></script>',
                 },
                 removeFiles : true
-            },                    
+            },
             prod: {
                 src: 'index.html',
                 blocks: {
@@ -107,22 +107,22 @@ module.exports = function(grunt) {
                 blocks: {
                     'app': { src: 'bower_components/requirejs/require.js' }
                 }
-            },             
+            },
         },
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-concat');	
-	grunt.loadNpmTasks('grunt-requirejs');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-handlebars');
+		grunt.loadNpmTasks('grunt-contrib-connect');
+		grunt.loadNpmTasks('grunt-contrib-cssmin');
+		grunt.loadNpmTasks('grunt-contrib-concat');
+		grunt.loadNpmTasks('grunt-requirejs');
+		grunt.loadNpmTasks('grunt-contrib-watch');
+		grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-file-blocks');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-	
+
     grunt.registerTask('build', [
         'jshint',
         'clean:dist',
